@@ -44,7 +44,6 @@ function onGalleryImageClick(evt) {
   instance.show();
 
   function onEscapeClose(evt) {
-    console.log(evt);
     if (evt.code === "Escape") {
       instance.close();
     }
