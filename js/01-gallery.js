@@ -35,6 +35,10 @@ function onGalleryImageClick(evt) {
 
   instance.show();
 
+  onClose: () => {
+    galleryListRef.removeEventListener("click", onGalleryImageClick);
+  };
+
   galleryListRef.addEventListener("keydown", onEscapeClose, { once: true });
   function onEscapeClose(evt) {
     if (evt.code === "Escape") {
