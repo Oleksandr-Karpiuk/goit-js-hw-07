@@ -32,10 +32,10 @@ function onGalleryImageClick(evt) {
   const instance = basicLightbox.create(
     `<img src="${evt.target.dataset.source}" width="800" height="600">`,
     {
-      onShow: (instance) => {
+      onShow: () => {
         galleryListRef.addEventListener("keydown", onEscapeClose);
       },
-      onClose: (instance) => {
+      onClose: () => {
         galleryListRef.removeEventListener("keydown", onEscapeClose);
       },
     }
