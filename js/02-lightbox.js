@@ -4,12 +4,14 @@ const galleryListRef = document.querySelector("ul.gallery");
 
 const makeGalleryListMarkup = ({ preview, original, description }) => {
   return `
-    <a class="gallery__item" href="${original}">
-      <img class="gallery__image"
-        src="${preview}"
-        alt="${description}"
-      />
-    </a>    
+    <li>
+      <a class="gallery__item" href="${original}">
+        <img class="gallery__image"
+          src="${preview}"
+          alt="${description}"
+        />
+      </a>
+    </li>  
   `;
 };
 
