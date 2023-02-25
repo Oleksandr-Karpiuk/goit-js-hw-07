@@ -1,4 +1,22 @@
-import { galleryItems } from './gallery-items.js';
-// Change code below this line
+import { galleryItems } from "./gallery-items.js";
 
-console.log(galleryItems);
+const galleryListRef = document.querySelector("ul.gallery");
+
+const makeGalleryListMarkup = ({ preview, original, description }) => {
+  return `
+    <a class="gallery__item" href="${original}">
+      <img class="gallery__image"
+        src="${preview}"
+        alt="${description}"
+      />
+    </a>    
+  `;
+};
+
+const makeGalleryListElement = galleryItems.map(makeGalleryListMarkup).join("");
+galleryListRef.insertAdjacentHTML("beforeend", makeGalleryListElement);
+
+const lightbox = new SimpleLightbox(".gallery a", {
+  captionsData: "alt",
+  captionDelay: 250,
+});
