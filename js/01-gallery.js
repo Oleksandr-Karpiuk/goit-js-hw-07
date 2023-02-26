@@ -33,10 +33,10 @@ function onGalleryImageClick(evt) {
     `<img src="${evt.target.dataset.source}" width="800" height="600">`,
     {
       onShow: () => {
-        galleryListRef.addEventListener("keydown", onEscapeClose);
+        document.addEventListener("keydown", onEscapeClose);
       },
       onClose: () => {
-        galleryListRef.removeEventListener("keydown", onEscapeClose);
+        document.removeEventListener("keydown", onEscapeClose);
       },
     }
   );
